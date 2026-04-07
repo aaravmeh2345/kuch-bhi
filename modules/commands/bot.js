@@ -57,7 +57,7 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
    };
 
    if ((event.body.toLowerCase() == "owner") || (event.body.toLowerCase() == "owner")) {
-     return api.sendMessage("💝🥀𝐎𝐖𝐍𝐄𝐑:- ☞Tʋjʜĸo-Hi'Dulhan Bʌŋaʋnga Nʌʜɩ-To'Kunwara Mʌʀ-Jʌwʋ☜ 💫\n🖤𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 Aarav🖤\n😳𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝🤓:- ☞ https://www.facebook.com/profile.php?id=100075862943841\n👋For Any Kind Of Help Contact On Instagram I'd ii_aarav_edit_😇", threadID);
+     return api.sendMessage("💝🥀𝐎𝐖𝐍𝐄𝐑:- ☞Aarav Mehra☜ 💫\n🖤𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 Aarav🖤\n😳𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝🤓:- ☞ https://www.facebook.com/profile.php?id=61583911932183\n👋For Any Kind Of Help Contact On Instagram I'd ii_aarav_edit_😇", threadID);
    };
 if ((event.body.toLowerCase() == "sim") || (event.body.toLowerCase() == "simi")) {
      return api.sendMessage("Sim Sim Na KRr IjjaT Sy MeRa Prefix LaGa 0or Bt kRr ITna Free Nhi kRta Me 😎🤞", threadID);
@@ -71,7 +71,7 @@ if ((event.body.toLowerCase() == "sim") || (event.body.toLowerCase() == "simi"))
      return api.sendMessage("Tu TharKi Tra Bap TharKi TeRa DaDa TharKi 🤬🤗", threadID);
    };
 
-   if ((event.body.toLowerCase() == "suchi") || (event.body.toLowerCase() == "suchi")) {
+   if ((event.body.toLowerCase() == "aawari") || (event.body.toLowerCase() == "aawari")) {
      return api.sendMessage("Malkin To Busy H btao Kya Kam Hai 💝💖💕😘", threadID);
    };
 
