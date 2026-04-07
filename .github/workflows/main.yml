@@ -1,0 +1,41 @@
+name: Priyansh Bot Run
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    # Har 6 ghante mein automatic start hoga
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          npm install @replit/database # Kuch bots ko iski zarurat padti hai
+
+      - name: Run Priyansh Bot
+        run: |
+          # Check if appstate exists to avoid login errors
+          if [ ! -f "appstate.json" ]; then
+            echo "Error: appstate.json file missing! Please upload it to your repo."
+            exit 1
+          fi
+          # Running the main bot file
+          node Priyansh.js
+        env:
+          NODE_ENV: production
+          
