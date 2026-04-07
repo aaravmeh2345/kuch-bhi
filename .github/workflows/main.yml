@@ -1,0 +1,30 @@
+name: Priyansh Bot Run
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    # Yeh har 6 ghante (00:00, 06:00, 12:00, 18:00 UTC) par chalega
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Isse aap manually bhi start kar sakte hain
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/checkout@v3
+        with:
+          node-version: '16' # Aapki requirement ke hisaab se version change kar sakte hain
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Bot
+        run: node index.js
+        timeout-minutes: 350 # Action max 6 hours tak chal sakta hai, isse thoda kam rakha hai safety ke liye
+        
