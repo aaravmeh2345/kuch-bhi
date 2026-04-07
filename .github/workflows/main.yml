@@ -1,0 +1,38 @@
+name: Priyansh Bot Run
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          # Fixing common missing modules for Facebook bots
+          npm install chalk@4.1.2 fs-extra axios
+
+      - name: Run Priyansh Bot
+        run: |
+          # Ensuring the bot has permission to run
+          chmod +x Priyansh.js
+          
+          # Force the bot to show the real error before it closes
+          node Priyansh.js || (echo "--------- ERROR LOG START ---------" && node Priyansh.js 2>&1 && echo "--------- ERROR LOG END ---------")
+        env:
+          NODE_ENV: production
+          
